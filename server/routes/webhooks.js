@@ -46,7 +46,6 @@ router.post('/webhook', express.raw({type: 'application/json'}), (request, respo
           })
   
           user.generateKey((err, user) =>{
-            console.log(user)
             if(err) return console.log(err)
           })
       

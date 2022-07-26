@@ -92,6 +92,8 @@ userSchema.methods.generateKey = function(cb){
     var user = this;
     var key = generateApiKey()
 
+    console.log(key, "This is the ke")
+
     user.api_key = key;
     user.save(function(err, user){
         if(err) return cb(err)
