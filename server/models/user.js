@@ -90,7 +90,7 @@ userSchema.methods.generateToken = function(cb){
 
 userSchema.methods.generateKey = function(cb){
     var user = this;
-    var key = generateApiKey()
+    var key = generateApiKey
 
     console.log(key, "This is the ke")
 
