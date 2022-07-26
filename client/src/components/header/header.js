@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SideDrawer from './Sidenav/sideNavigation';
 import { useSelector } from 'react-redux';
-import Logo from './crossCircle-mod_50.png'
+
 
 
 const Header = (props) =>{
@@ -26,7 +26,7 @@ const Header = (props) =>{
                         <>
                         {/* <img src={Logo} /> */}
                             <h1>
-                                PatientScore.io
+                                PrimEtsy.io
                             </h1>
                         </>
                     </Link>

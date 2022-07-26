@@ -10,7 +10,6 @@ const urlencoded = require('body-parser').urlencoded;
 const user = require('./routes/user')
 const stripe = require('./routes/stripe')
 const webhooks = require('./routes/webhooks')
-const text = require('./routes/text')
 
 
 
@@ -44,7 +43,6 @@ app.use(cookieParser());
 app.use('/api/users', user);
 app.use('/api/stripe', stripe);
 app.use('/api/webhooks', webhooks);
-app.use('/api/text', text);
 
 
 app.use(express.static('client/build'));
