@@ -25,9 +25,11 @@ const Header = (props) =>{
                     <Link to='/dashboard'>
                         <>
                         {/* <img src={Logo} /> */}
-                            <h1>
-                                PrimEtsy.io
-                            </h1>
+                            {/* <h1>
+                                PrimEtsy.io test
+                            </h1> */}
+
+                            <img class="header-logo" src="../shellbloom_logo.svg"/>
                         </>
                     </Link>
                     </div>
@@ -40,7 +42,7 @@ const Header = (props) =>{
 
                     :
                     <>
-                        <div className='p-4 mt-3'>
+                        {/* <div className='p-4 mt-3'>
                             <Link to='/login' >
                                 Login
                             </Link>
@@ -49,7 +51,7 @@ const Header = (props) =>{
                             <Link to='/signup' >
                                 Sign Up
                             </Link>
-                        </div>
+                        </div> */}
                     </>
                     }
             </div>
