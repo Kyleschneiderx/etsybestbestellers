@@ -9,10 +9,10 @@ const LoginSchema = Yup.object().shape({
     companyName:Yup.string().required(),
     password:Yup.string()
     .min(6," Too short")
-    .required("Required !!"),
+    .required("*Required"),
     email:Yup.string()
     .email('Invalid Email :(')
-    .required("Required !!")
+    .required("*Required")
 })
 
  
@@ -50,10 +50,10 @@ class Signup extends Component {
     render(){
         console.log(this.props)
         return(   
-        <div className="border rounded container h-200 d-flex justify-content-center form_container">
+        <div className="border rounded container h-200 d-flex justify-content-center form_container  center-div signup-div">
             <div className='row'>
                 <div className='col'>
-                    <h1 className="pt-5 fw-bold">Welcome</h1>
+                    <h1 className="pt-5 fw-bold">Signup</h1>
                     <Formik
                         initialValues={{companyName:'' ,email:'', password: ''}}
                         validationSchema={LoginSchema}
@@ -135,11 +135,11 @@ class Signup extends Component {
                                 </div>
                                 <div className="d-flex justify-content-center mt-3">
                                     <button type="submit" className="btn btn-primary">
-                                        Register
+                                        Signup for Free
                                     </button>
                                 </div>
                                 <div className="d-flex justify-content-center mt-3">
-                                    <Link to='/login'>Sign In Here!</Link>
+                                    Already have an account? <Link to='/login'>Log In Here</Link>
                                 </div>
 
                                 <br/>

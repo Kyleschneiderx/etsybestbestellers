@@ -49,10 +49,10 @@ class Login extends Component {
         console.log(this.props)
         return(
     
-        <div className="border rounded container h-200 d-flex justify-content-center form_container">
+        <div className="border rounded container h-200 d-flex justify-content-center form_container center-div signup-div">
             <div className='row'>
                     <div className='col'>
-                        <h1 className="pt-5 fw-bold"> Welcome Back</h1>
+                        <h1 className="pt-5 fw-bold"> Login</h1>
                     
                         <Formik
                             initialValues={{email:'', password: ''}}
@@ -114,7 +114,7 @@ class Login extends Component {
                                             </button>
                                         </div>
                                         <div className="d-flex justify-content-center mt-3">
-                                            <Link to='/signup'>Sign Up Here!</Link>
+                                            Don't have an account? <Link to='/signup'>Sign Up Free</Link>
                                         </div>
 
                                         <br/>
