@@ -83,7 +83,8 @@ export function logoutUser(){
     const request = axios.get('/api/users/logout')
         .then(response => {
                 return false
-            });
+        });
+        window.location.reload(false)
     return{
         type: USER_LOGOUT,
         payload:request
