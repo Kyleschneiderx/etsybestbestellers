@@ -23,9 +23,11 @@ const Dashboard = ({history}) => {
 
 
     const getKey =()=>{
+      if(user.subscriptions){
         if(user.subscriptions.length > 0){
             console.log('Subscription exists')
         }
+      }
         
     }
 
@@ -43,12 +45,48 @@ const Dashboard = ({history}) => {
           history.push("/dashboard");
         }
     };
+
+    const freeApiKey = async () =>{
+      if (user && user.stripe_customer_id) {
+        await axios.get("/api/users/apiKey")
+        window.location.reload(false)
+      } else {
+        history.push("/dashboard");
+      }
+
+    }
     
 
     const PriceCard = ()=>{
         return (
             <div class='row'>
-            <div className="col">
+              <div className="col">
+              <div className={`card mb-4 rounded-3 shadow-sm`}>
+                <div className={`card-header py-3}`}>
+                  <h4 className="my-0 fw-normal">Free</h4>
+                </div>
+        
+                <div className="card-body">
+                  <h1 className="card-title pricing-card-title">
+                    {(30000 / 100).toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}{" "}
+                    <small className="text-muted fw-light">Value</small>
+                  </h1>
+                  {/* <ul className="list-unstyled mt-3 mb-4">
+                    <li className="fw-bold">Some Description</li>
+                    <li>Free market analysis</li>
+                    <li>Email support</li>
+                    <li>Help center access</li>
+                  </ul> */}
+                  <button class='btn btn-primary btn-lg btn-block' onClick={()=>freeApiKey()}>
+                      Generate Key
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* <div className="col">
               <div className={`card mb-4 rounded-3 shadow-sm`}>
                 <div className={`card-header py-3}`}>
                   <h4 className="my-0 fw-normal">Monthly</h4>
@@ -73,8 +111,8 @@ const Dashboard = ({history}) => {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="col">
+            </div> */}
+            {/* <div className="col">
               <div className={`card mb-4 rounded-3 shadow-sm`}>
                 <div className={`card-header py-3}`}>
                   <h4 className="my-0 fw-normal">Yearly</h4>
@@ -99,7 +137,7 @@ const Dashboard = ({history}) => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             </div>
           );
     }

@@ -141,6 +141,7 @@ router.get('/apiKey', auth, (req, res)=>{
                     id: user._id,
                     email: user.email,
                     companyName: user.companyName,
+                    role: user.role,
                     api_key:user.api_key
                 }
 
