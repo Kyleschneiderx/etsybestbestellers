@@ -149,6 +149,33 @@ router.get('/apiKey', auth, (req, res)=>{
         })
     
     })
+
+    const nodemailer = require('nodemailer');
+
+    const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'kyleschneiderx@gmail.com',
+        pass: process.env.GMAILKEY
+    }
+    });
+
+    const mailOptions = {
+    from: 'hello@chellbloom.com',
+    to: `${req.user.email}`,
+    subject: 'Shellbloom Chrome Extension Link',
+    text: 'https://chrome.google.com/webstore/detail/shellbloom/bdkcgjmapbofhonlhkackbmaillfalne?hl=en&authuser=0'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+            // do something useful
+        }
+    });
+
     
 })
 
