@@ -76,7 +76,7 @@ router.post('/webhook', express.raw({type: 'application/json'}), (request, respo
       break;
     // ... handle other event types
     case 'invoice.payment_succeeded':
-      const invoicePaymentSuceeded = event.data.objecct
+      const invoicePaymentSuceeded = event.data.object
       console.log("Paymeny_Intent Suceeded")
       console.log(invoicePaymentSuceeded)
       break;
