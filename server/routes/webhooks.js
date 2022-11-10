@@ -81,7 +81,7 @@ router.post('/webhook', express.raw({type: 'application/json'}), (request, respo
       console.log(invoicePaymentSuceeded)
       break;
     case 'invoice.paid':
-      const invoicePaid = event.data.objecct
+      const invoicePaid = event.data.object
       console.log("Invoice Paid")
       console.log(invoicePaid)
       break;
